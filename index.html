@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piyumi Tharushika 🥳 😇</title>
+    <!-- External Resources -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Magical Background with Stars -->
+    <div class="magic-background" id="magicBackground"></div>
+    
+    <!-- Loading Screen -->
+    <div class="loading-screen active" id="loadingScreen">
+        <div class="birthday-cake">🎂</div>
+        <h1 class="loading-title">Happy Birthday, Piyumi Tharushika</h1>
+        <p class="loading-subtitle">Happy Birthday 🌸 Some feelings don't need words… just wishes.
+            <br>A magical adventure is being prepared just for you. Please wait while the celebrations load...</p>
+        
+        <div class="loading-countdown" id="loadingCountdown">
+            Starting in: <span id="countdownTimer">6</span> seconds
+        </div>
+        
+        <div class="loading-progress">
+            <div class="loading-progress-bar" id="loadingProgressBar"></div>
+        </div>
+        
+        <p class="loading-message" id="loadingMessage">Preparing magical surprises...</p>
+    </div>
+    
+    <!-- Unlock Animation -->
+    <div class="unlock-animation" id="unlockAnimation">
+        <div class="unlock-content">
+            <div class="unlock-icon">🎉</div>
+            <h2 class="unlock-text" id="unlockText">Surprise Unlocked!</h2>
+            <p class="unlock-description" id="unlockDescription">A new surprise is ready for you!</p>
+        </div>
+    </div>
+    
+    <!-- Celebration Area for Animations -->
+    <div class="celebration-area" id="celebrationArea"></div>
+    
+    <!-- Celebration Message -->
+    <div class="celebration-message" id="celebrationMessage">
+        <h3>Magical Achievement!</h3>
+        <p id="celebrationText">You've completed this magical challenge!</p>
+        <button class="nav-button next" id="continueBtn" style="margin-top: 25px;">Continue Journey</button>
+    </div>
+    
+    <!-- Secret Message Button -->
+    <div class="secret-message" id="secretMessageBtn">
+        <i class="fas fa-gift"></i>
+    </div>
+    
+    <!-- Main Container -->
+    <div class="master-container" id="masterContainer">
+        <!-- Progress Bar -->
+        <div class="journey-progress">
+            <div class="progress-fill" id="progressFill"></div>
+            <div class="progress-marker active" style="left: 0%;" data-step="1" id="marker1">🎁</div>
+            <div class="progress-marker locked" style="left: 25%;" data-step="2" id="marker2"><i class="fas fa-lock"></i></div>
+            <div class="progress-marker locked" style="left: 50%;" data-step="3" id="marker3"><i class="fas fa-lock"></i></div>
+            <div class="progress-marker locked" style="left: 75%;" data-step="4" id="marker4"><i class="fas fa-lock"></i></div>
+            <div class="progress-marker locked" style="left: 100%;" data-step="5" id="marker5"><i class="fas fa-lock"></i></div>
+        </div>
+        
+        <!-- Header -->
+        <div class="header">
+            <h1 class="title">Happy Birthday, Piyumi ✨</h1>
+            <p class="subtitle">December 14th · some people make moments memorable without trying. just for you...</p>
+        </div>
+        
+        <!-- Main Content with Sequential Surprises -->
+        <div class="main-content">
+            <!-- Surprise 1: Word Collection -->
+            <div class="surprise-section active" id="surprise1">
+                <div class="birthday-card">
+                    <div class="photo-frame">
+                        <!-- Use a placeholder image - replace with your image -->
+                        <img src="image/photo_2025-12-06_10-06-47.jpg" alt="Beautiful Piyumi">
+                    </div>
+                    
+                    <p class="intro-message">Welcome to your magical birthday journey, Piyumi! I've created 5 enchanting surprises for you. Let's begin by collecting words that capture the beautiful essence of who you are.</p>
+                    
+                    <div class="instructions">✨ TAP EACH WORD TO COLLECT IT ✨</div>
+                    
+                    <div class="word-collection" id="wordCollection">
+                        <!-- Words will be generated here -->
+                    </div>
+                    
+                    <div class="progress-indicator" id="wordProgress">📊 Collected: 0/8 words</div>
+                </div>
+                
+                <div class="nav-buttons">
+                    <button class="nav-button" id="prevBtn1" disabled><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="nav-button next" id="nextBtn1">Unlock Next Moment <i class="fas fa-key"></i></button>
+                </div>
+            </div>
+            
+            <!-- Surprise 2: Picture Puzzle -->
+            <div class="surprise-section" id="surprise2">
+                <div class="birthday-card">
+                    <h2 class="section-title">Memory Puzzle</h2>
+                    <p class="intro-message">Each piece of this puzzle holds a magical memory. As you solve it, you'll reveal a special picture that captures beautiful moments.</p>
+                    
+                    <div class="instructions">🎯 TAP EACH PUZZLE PIECE TO SOLVE IT 🎯</div>
+                    
+                    <div class="puzzle-container" id="puzzleContainer">
+                        <!-- Puzzle pieces will be generated here -->
+                    </div>
+                    
+                    <div class="progress-indicator" id="puzzleProgress">📊 Solved: 0/12 pieces</div>
+                </div>
+                
+                <div class="nav-buttons">
+                    <button class="nav-button" id="prevBtn2"><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="nav-button next" id="nextBtn2">Unlock Next Moment <i class="fas fa-key"></i></button>
+                </div>
+            </div>
+            
+            <!-- Surprise 3: Memory Game -->
+            <div class="surprise-section" id="surprise3">
+                <div class="birthday-card">
+                    <h2 class="section-title">Memory of Wishes</h2>
+                    <p class="intro-message">Find matching pairs of birthday wishes. Each pair represents a heartfelt hope for your happiness and dreams.</p>
+                    
+                    <div class="instructions">🔍 FIND ALL MATCHING PAIRS 🔍</div>
+                    
+                    <div class="memory-grid" id="memoryGrid">
+                        <!-- Memory cards will be generated here -->
+                    </div>
+                    
+                    <div class="progress-indicator" id="memoryProgress">📊 Found: 0/6 pairs</div>
+                </div>
+                
+                <div class="nav-buttons">
+                    <button class="nav-button" id="prevBtn3"><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="nav-button next" id="nextBtn3">Unlock Next Moment <i class="fas fa-key"></i></button>
+                </div>
+            </div>
+            
+            <!-- Surprise 4: Secret Message -->
+            <div class="surprise-section" id="surprise4">
+                <div class="birthday-card">
+                    <h2 class="section-title">Hidden Whispers</h2>
+                    <p class="intro-message">You've unlocked a special secret message. These are the quiet thoughts that have been waiting to be shared with you.</p>
+                    
+                    <div class="instructions">📜 READ THE SPECIAL MESSAGE FOR YOU 📜</div>
+                    
+                    <div class="final-message" style="margin-top: 30px;">
+                        <h2>Whispers in the Stars</h2>
+                        <div class="message-content">
+                            <p>Dear Piyumi,</p>
+                            <p>Sometimes the most important things are the hardest to say out loud. So I'm writing them here, in this secret space between puzzles and games.</p>
+                            <p>This secret message is a reminder: You matter more than you know.</p>
+                        </div>
+                        <div class="signature">
+                            A secret admirer Of MHD NABEEL
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav-buttons">
+                    <button class="nav-button" id="prevBtn4"><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="nav-button next" id="nextBtn4">Unlock Final Moment <i class="fas fa-crown"></i></button>
+                </div>
+            </div>
+            
+            <!-- Surprise 5: Final Celebration -->
+            <div class="surprise-section" id="surprise5">
+                <div class="birthday-card">
+                    <h2 class="section-title">The Grand Finale</h2>
+                    <p class="intro-message">You've reached the final celebration! This is where all the magic comes together in one beautiful moment.</p>
+                    
+                    <div class="instructions">🎊 COMPLETE THE JOURNEY 🎊</div>
+                    
+                    <div class="final-message" style="margin-top: 30px;">
+                        <h2>A Letter From The Heart</h2>
+                        <div class="message-content">
+                            <p>Dear Piyumi,</p>
+                            <p>Happy Birthday To You🌸</p>
+                            <p>I wanted to wish you a day filled with peaceful smiles and peaceful joy. You have a way of making moments feel light, and that is truly something special.</p>
+                            <p>May this new year remind you, in small ways, how much you matter — more than you may ever realize.</p>
+                            <p>Your heart always remember how special you are.</p>
+                            <p>May this year be your most magical yet. Wishing you a peaceful and beautiful year ahead.</p>
+                            <p>Finally: Happy Birthday, Piyumi Tharushika.</p>
+                        </div>
+                        <div class="signature">With all the stars in the sky, yours</div>
+                    </div>
+                </div>
+                
+                <div class="nav-buttons">
+                    <button class="nav-button" id="prevBtn5"><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="nav-button next" id="nextBtn5">Complete Journey <i class="fas fa-crown"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
